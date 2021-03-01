@@ -54,7 +54,7 @@ app.use(session({
 
 //  End of Session Config
 
-// proctect routes
+// protect routes
 const redirectLogin = (req, res, next) => {
   if (!req.session.userId) {
     res.redirect('/login')
@@ -138,7 +138,7 @@ app.get('/login', redirectHome, (req, res) => {
   `)
 })
 
-// Register route
+// Register route Get req
 app.get('/register', redirectHome, (req, res) => {
   res.send(`
     <h1>Register</h1>
@@ -152,7 +152,7 @@ app.get('/register', redirectHome, (req, res) => {
   `)
 })
 
-// Register route
+// Register route Post req
 app.post('/login', redirectHome, (req, res) => {
   const {
     email,
