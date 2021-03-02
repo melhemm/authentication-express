@@ -6,7 +6,7 @@ const app = express();
 const ONE_MINUTE = 1000 * 60
 
 const {
-  PORT = 3000, SESS_NAME = 'test', SESS_SECRET = 'random', SESS_LIFETIME = ONE_MINUTE, NODE_ENV = 'development'
+  port = 3000, SESS_NAME = 'test', SESS_SECRET = 'random', SESS_LIFETIME = ONE_MINUTE, NODE_ENV = 'development'
 } = process.env;
 
 const IN_PROD = NODE_ENV === 'production'
@@ -210,4 +210,4 @@ app.post('/logout', redirectLogin, (req, res) => {
   })
 })
 
-app.listen(process.env.PORT || PORT, () => console.log(`Server Started on port ${PORT}`))
+app.listen(process.env.PORT || port, () => console.log(`Server Started on port ${port}`))
