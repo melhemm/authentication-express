@@ -210,4 +210,4 @@ app.post('/logout', redirectLogin, (req, res) => {
   })
 })
 
-app.listen(process.env.PORT || port, () => console.log(`Server Started on port ${port}`))
+app.listen(port, () => console.log(`Server Started on port ${port}`))
