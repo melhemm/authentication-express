@@ -9,7 +9,7 @@ const {
   port = 3000, SESS_NAME = 'test', SESS_SECRET = 'random', SESS_LIFETIME = ONE_MINUTE, NODE_ENV = 'development'
 } = process.env;
 
-const IN_PROD = NODE_ENV === 'production'
+// const IN_PROD = NODE_ENV === 'production'
 
 // users 
 const users = [{
@@ -46,7 +46,7 @@ app.use(session({
   cookie: {
     maxAge: SESS_LIFETIME,
     sameSite: true,
-    secure: IN_PROD
+    // secure: IN_PROD
   }
 }))
 
@@ -210,4 +210,4 @@ app.post('/logout', redirectLogin, (req, res) => {
   })
 })
 
-app.listen(port, () => console.log(`Server Started on port ${port}`))
+app.listen(process.env.PORT || port, () => console.log(`Server Started on port ${port}`))
