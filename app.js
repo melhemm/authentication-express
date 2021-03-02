@@ -9,8 +9,6 @@ const {
   PORT = 3000, SESS_NAME = 'test', SESS_SECRET = 'random', SESS_LIFETIME = ONE_MINUTE, NODE_ENV = 'development'
 } = process.env;
 
-
-
 const IN_PROD = NODE_ENV === 'production'
 
 // users 
